@@ -12,7 +12,7 @@ import java.io.FileWriter;
 	
 	public static void main(String args[]) throws Exception {
 		// first get input
-		BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
+		try (BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt")));
 		String line = reader.readLine();
 
 		int i = 0;	// set i to 0
