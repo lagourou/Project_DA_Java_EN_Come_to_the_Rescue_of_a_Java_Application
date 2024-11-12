@@ -8,7 +8,7 @@ import java.util.Map; // Importe la collection Map
 import java.util.HashMap; // Importe la collection HashMap
 
  public class AnalyticsCounter {
-	private static Map<String, Integer>symptomCounts = new HashMap<>(); 
+	private static Map<String, Integer>SymptomCounts = new HashMap<>(); 
 	// Déclaration de la Map pour compter les occurrences de chaque symptomes.
 
 	// initialize all counters to 0
@@ -62,7 +62,7 @@ import java.util.HashMap; // Importe la collection HashMap
 		writer.write("dialated pupils: " + pupilCount + "\n");
 		
 		//Écrivez les autres symptômes et leurs occurrences dans le fichier.
-		for (Map.Entry<String, Integer> entry : symptomCounts.entrySet()) {
+		for (Map.Entry<String, Integer> entry : SymptomCounts.entrySet()) {
 			writer.write(entry.getKey() + ":" + entry.getValue() +"\n");
 		}
 		
