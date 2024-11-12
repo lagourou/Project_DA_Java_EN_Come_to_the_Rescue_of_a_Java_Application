@@ -20,6 +20,7 @@ import java.util.HashMap; // Importe la collection HashMap
 		// first get input
 
 		// Ajouter le bloc try pour fermer la ressource BufferedReader
+		// Changement du chemin relatif du fichier texte "symptoms.txt"
 		try(BufferedReader reader = new BufferedReader (new FileReader("/workspaces/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/src/com/hemebiotech/analytics/symptoms.txt"))){
 			
 		String line = reader.readLine(); 
