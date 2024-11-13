@@ -6,10 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 
+
+
 public class WriteSymptomDataToFile implements ISymptomWriter {
+
+   
    private String filepath;
 
    public WriteSymptomDataToFile(String filepath) {
+    		 
+
         this.filepath = filepath;
    }
  public List<String> GetSymptoms() {
