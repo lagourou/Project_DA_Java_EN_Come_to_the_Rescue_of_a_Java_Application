@@ -32,7 +32,7 @@ import java.util.TreeMap; // Importe la collection TreeMap
 			 }
              
 			}
-		// Ajouter le bloc catch pour gérer les exceptions au cas ou il y a une erreur.
+		// Ajouter le bloc catch pour gérer les exceptions au cas oú il y a une erreur.
 	    catch (IOException e) {
 		e.printStackTrace();
 	      }
