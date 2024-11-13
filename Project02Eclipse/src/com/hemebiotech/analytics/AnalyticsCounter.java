@@ -12,12 +12,11 @@ import java.util.TreeMap; // Importe la collection TreeMap
 	
 	private static Map<String, Integer>SymptomCounts = new TreeMap<>(); 
 	// Déclaration de la Map pour compter les occurrences de chaque symptomes.
+   
 
-		
-	
 	public static void main(String args[]) throws Exception {
 		// first get input
-		
+		  
 
 		// Ajouter le bloc try pour fermer la ressource BufferedReader
 		// Changement du chemin relatif du fichier texte "symptoms.txt"
@@ -26,11 +25,12 @@ import java.util.TreeMap; // Importe la collection TreeMap
 		String line = reader.readLine(); 
 		
 		while (line != null) {
-			SymptomCounts.put(line, SymptomCounts.getOrDefault(line, 0) + 1);
+			
+			 SymptomCounts.put(line, SymptomCounts.getOrDefault(line, 0) + 1);
                 //Compter les occurences de symptomes autres que headache, rash et pupil
-				}
-
-			line = reader.readLine();	// get another symptom
+			 line = reader.readLine();	// get another symptom
+			 }
+             
 			}
 		// Ajouter le bloc catch pour gérer les exceptions au cas ou il y a une erreur.
 	    catch (IOException e) {
@@ -41,8 +41,6 @@ import java.util.TreeMap; // Importe la collection TreeMap
 
 		// Ajouter le bloc try pour fermer la ressource FileWriter
 		try(FileWriter writer = new FileWriter ("result.out")){
-			
-	    
 			
 		//Écrivez les autres symptômes et leurs occurrences dans le fichier.
 		for (Map.Entry<String, Integer> entry : SymptomCounts.entrySet()) {
