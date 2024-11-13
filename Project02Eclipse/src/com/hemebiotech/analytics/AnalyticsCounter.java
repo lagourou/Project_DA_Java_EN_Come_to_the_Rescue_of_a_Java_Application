@@ -3,7 +3,7 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException; // Importe la classe pour gérer les exceptions
+import java.io.IOException; // Importe la classe pour gérer les exceptions d'entrée/sortie
 import java.util.Map; // Importe la collection Map
 import java.util.TreeMap; // Importe la collection TreeMap
 
@@ -27,7 +27,7 @@ import java.util.TreeMap; // Importe la collection TreeMap
 		while (line != null) {
 			
 			 SymptomCounts.put(line, SymptomCounts.getOrDefault(line, 0) + 1);
-                //Compter les occurences de symptomes autres que headache, rash et pupil
+                //Compter les occurences de chaque symptomes 
 			 line = reader.readLine();	// get another symptom
 			 }
              
@@ -42,9 +42,10 @@ import java.util.TreeMap; // Importe la collection TreeMap
 		// Ajouter le bloc try pour fermer la ressource FileWriter
 		try(FileWriter writer = new FileWriter ("result.out")){
 			
-		//Écrivez les autres symptômes et leurs occurrences dans le fichier.
+		// Écrivez les autres symptômes et leurs occurrences dans le fichier.
 		for (Map.Entry<String, Integer> entry : SymptomCounts.entrySet()) {
 			writer.write(entry.getKey() + ":" + entry.getValue() +"\n");
+			// Écrit le symptôme et le nombre d'occurrences dans le fichier "result.out".
 		}
 		
 		// Ajouter le bloc catch pour gérer les exceptions au cas oú il y a une erreur.
@@ -52,7 +53,7 @@ import java.util.TreeMap; // Importe la collection TreeMap
 		e.printStackTrace();
 	} 
 	SymptomCounts.forEach((key, value) -> System.out.println(key + ":" + value));
-
+    // affiche chaque symptôme et le nombre d'occurrences 
 	}  
   
 }
