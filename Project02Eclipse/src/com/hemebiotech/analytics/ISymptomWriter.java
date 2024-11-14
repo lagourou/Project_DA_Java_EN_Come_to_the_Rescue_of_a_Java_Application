@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ISymptomWriter {
 
-    void WriteSymptomDataToFile(List<String> Symptoms);
+    void writeSymptomDataToFile(List<String> Symptoms);
 
     List<String> getSymptoms ();
 }
