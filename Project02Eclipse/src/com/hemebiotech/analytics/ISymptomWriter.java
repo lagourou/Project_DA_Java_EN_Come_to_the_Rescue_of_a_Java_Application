@@ -10,11 +10,14 @@ import java.util.List;
 
 
 public interface ISymptomWriter {
-
+     /** 
+      * Writes symptoms data to a file
+      * @param symmptoms a List of Strings representing the symptoms
+      */
 
     void writeSymptomDataToFile(List<String> symptoms);
     /**
-     * 
+     * recover symptom data
      * @return a List of strings recover symptom data
      */
     
