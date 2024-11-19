@@ -11,12 +11,23 @@ import java.io.IOException;
 
 public class WriteSymptomDataToFile implements ISymptomWriter {
 
+   private String filepath;
+
    /**
-   * Takes a list of symptoms and writes each symptom to a file named "result.out".
-   */
+    * Takes a list of symptoms and writes each symptom to a file named
+    * "result.out"
+    * 
+    * @param filepath a full or partial path to file with symptom strings in it,
+    *                 one per line
+    */
+
+   public WriteSymptomDataToFile(String filepath) {
+      this.filepath = filepath;
+   }
+
    @Override
    public void writeSymptomDataToFile(List<String> symptoms) {
-      try (FileWriter writer = new FileWriter("result.out")) {
+      try (FileWriter writer = new FileWriter(filepath)) {
          for (String symptom : symptoms) {
             writer.write(symptom + "\n");
          }
