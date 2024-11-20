@@ -20,8 +20,8 @@ public class AnalyticsCounter {
 	private ISymptomWriter writer;
 
 	/**
-	 * 
-	 * @param reader 
+	 *
+	 * @param reader
 	 * @param writer
 	 */
 
@@ -32,6 +32,8 @@ public class AnalyticsCounter {
 	}
 
 	/**
+	 * 
+	 * getSymptoms method of the reader to retieve a list of symptom
 	 * 
 	 * @return List of symptoms
 	 * 
@@ -44,7 +46,11 @@ public class AnalyticsCounter {
 	/**
 	 * 
 	 * @param symptoms List of symptom
+	 *                 countSymptoms method counts the number of occurrences of each
+	 *                 symptom
+	 *                 HashMap to store the number of each symptom
 	 * @return Map with symptoms as keys and their counts as values
+	 * 
 	 */
 
 	public Map<String, Integer> countSymptoms(List<String> symptoms) {
@@ -60,7 +66,10 @@ public class AnalyticsCounter {
 	/**
 	 * 
 	 * @param symptoms List of symptom
-	 * @return TreeMap implement Map and SortedMap put in alphabetical order
+	 *                 sortSymptoms method sorts the list of symptoms and
+	 *                 occurrences alphabetically
+	 *                 TreeMap maintains ascending key order
+	 * @return Map with symptoms in alphabetical order
 	 */
 
 	public Map<String, Integer> sortSymptoms(Map<String, Integer> symptoms) {
@@ -70,7 +79,11 @@ public class AnalyticsCounter {
 
 	/**
 	 * 
-	 * @param symptoms List of symptom 
+	 * @param symptoms List of symptom
+	 *                 Takes a map of symptoms and their occurrences converts to a
+	 *                 strings
+	 *                 writeSymptoms method write symptom data in a file
+	 * 
 	 */
 
 	public void writeSymptoms(Map<String, Integer> symptoms) {
@@ -84,6 +97,10 @@ public class AnalyticsCounter {
 	}
 
 	/**
+	 * Main method that runs the programm
+	 * It reads symptoms from a file, counts their occurrences
+	 * sorts them alphabeticelly and writes the results to a file
+	 * 
 	 * 
 	 * @param args Command Line Arguments
 	 * @throws Exception if there is an I/O error
@@ -92,9 +109,7 @@ public class AnalyticsCounter {
 	public static void main(String args[]) throws Exception {
 		Map<String, Integer> symptomCounts = new HashMap<>();
 
-		// first get input
-		// Ajouter le bloc try pour fermer la ressource BufferedReader
-		// Changement du chemin relatif du fichier texte "symptoms.txt"
+		// Première étape: lire les symptômes à partir d'un fichier texte
 		try (BufferedReader reader = new BufferedReader(new FileReader(
 				"/workspaces/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/src/com/hemebiotech/analytics/symptoms.txt"))) {
 
@@ -102,37 +117,30 @@ public class AnalyticsCounter {
 
 			while (line != null) {
 
+				// Compter les occurences de chaque symptôme
 				symptomCounts.put(line, symptomCounts.getOrDefault(line, 0) + 1);
-				// Compter les occurences de chaque symptomes
 				line = reader.readLine(); // get another symptom
-
 			}
-
 		}
-		// Ajouter le bloc catch pour gérer les exceptions au cas oú il y a une erreur.
+		// Gérer les exceptions en cas d'erreur d'entrée/sortie
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		AnalyticsCounter counter = new AnalyticsCounter(null, null);
+		// Trier les symptômes par ordre alphabétique
 		Map<String, Integer> sortedSymptoms = counter.sortSymptoms(symptomCounts);
 
-		// next generate output
-		// Ajouter le bloc try pour fermer la ressource FileWriter
+		// Générer la sortie : écrire les résultats triés dans un fichier
 		try (FileWriter writer = new FileWriter("result.out")) {
-
-			// Écrivez les autres symptômes et leurs occurrences dans le fichier.
+			// Écrire chaque symptôme et leurs nombre d'occurrences dans le fichier.
 			for (Map.Entry<String, Integer> entry : sortedSymptoms.entrySet()) {
 				writer.write(entry.getKey() + ":" + entry.getValue() + "\n");
-				// Écrit le symptôme et le nombre d'occurrences dans le fichier "result.out".
 			}
-
-			// Ajouter le bloc catch pour gérer les exceptions au cas oú il y a une erreur.
+			// Gérer les exceptions en cas d'erreur d'entrée/sortie
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		// Affiche chaque symptôme et le nombre d'occurrences
 		sortedSymptoms.forEach((key, value) -> System.out.println(key + ":" + value));
-		// affiche chaque symptôme et le nombre d'occurrences
 	}
-
 }
