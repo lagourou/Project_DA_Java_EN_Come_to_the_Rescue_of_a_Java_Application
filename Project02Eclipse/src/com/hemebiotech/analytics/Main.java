@@ -4,19 +4,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
+import java.util.Map.Entry; // Importe la collection Map.Entry
 
 /**
- * *Class Main pour exécuter l'application AnalyticsCounter
+ *Main Class to run the AnalyticsCounter application
  */
 
 public class Main {
 
   /**
-   * Méthode Main pour exécuter l'application
+   * Main method to run the application
    * 
-   * @param args Arguments de la ligne de commande
-   * @throws IOException S'il y a une exception d'entrée/sortie
+   * @param args Command Line Arguments
+   * @throws IOException if there is an I/O error 
    */
 
   public static void main(String[] args) throws IOException {

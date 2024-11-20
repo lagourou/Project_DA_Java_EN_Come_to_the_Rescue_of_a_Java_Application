@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Simple brute force implementation
+ * Simple brute force implementation of reading symptom data from a file 
+ * Implements the ISymptomReader interface
  *
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
@@ -23,6 +24,14 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 		this.filepath = filepath;
 	}
+    
+    /**
+	 * Read symptoms from a file
+	 * 
+	 * @return the list of results
+	 * @throws IOException if there is an I/O error while reading the file
+	 */
+
 
 	@Override
 	public List<String> getSymptoms() {

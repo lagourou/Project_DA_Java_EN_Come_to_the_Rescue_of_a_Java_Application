@@ -10,10 +10,20 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException; // Importe la classe pour gérer les exceptions d'entrée/sortie
 
+/**
+ * AnalyticsCounter Class analyse symptom data
+ */
+
 public class AnalyticsCounter {
 
 	private ISymptomReader reader;
 	private ISymptomWriter writer;
+
+	/**
+	 * 
+	 * @param reader 
+	 * @param writer
+	 */
 
 	public AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
 		this.reader = reader;
@@ -21,9 +31,21 @@ public class AnalyticsCounter {
 
 	}
 
+	/**
+	 * 
+	 * @return List of symptoms
+	 * 
+	 */
+
 	public List<String> getSymptoms() {
 		return reader.getSymptoms();
 	}
+
+	/**
+	 * 
+	 * @param symptoms List of symptom
+	 * @return Map with symptoms as keys and their counts as values
+	 */
 
 	public Map<String, Integer> countSymptoms(List<String> symptoms) {
 
@@ -35,10 +57,21 @@ public class AnalyticsCounter {
 		return symptomCounts;
 	}
 
+	/**
+	 * 
+	 * @param symptoms List of symptom
+	 * @return TreeMap implement Map and SortedMap put in alphabetical order
+	 */
+
 	public Map<String, Integer> sortSymptoms(Map<String, Integer> symptoms) {
 
 		return new TreeMap<>(symptoms);
 	}
+
+	/**
+	 * 
+	 * @param symptoms List of symptom 
+	 */
 
 	public void writeSymptoms(Map<String, Integer> symptoms) {
 		List<String> dataToWrite = new ArrayList<>();
@@ -49,6 +82,12 @@ public class AnalyticsCounter {
 		}
 		writer.writeSymptomDataToFile(dataToWrite);
 	}
+
+	/**
+	 * 
+	 * @param args Command Line Arguments
+	 * @throws Exception if there is an I/O error
+	 */
 
 	public static void main(String args[]) throws Exception {
 		Map<String, Integer> symptomCounts = new HashMap<>();
