@@ -5,8 +5,8 @@ import java.util.List;
 import java.io.IOException;
 
 /**
- * Simple brute force implementation
- * Implements the ISymptomWriter interface
+ * Simple brute force implementation.
+ * Implements the ISymptomWriter interface.
  * 
  */
 
@@ -15,10 +15,9 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
    private String filepath;
 
    /**
-    * Takes a list of symptoms and writes each symptom to a file named "result.out"
+    * Constructs a WriteSymptomDataToFile object.
     * 
-    * @param filepath a full or partial path to file with symptom strings in it,
-    *                 one per line
+    * @param filepath A path to file with symptom strings in it one per line.
     */
 
    public WriteSymptomDataToFile(String filepath) {
@@ -26,11 +25,10 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
    }
 
    /**
-    * Writes a list of symptoms to a file. Each symptom is written on e new line
+    * Writes a list of symptoms to a file. Each symptom is written on new line.
     *
-    *@param symptoms List of symptoms to write  to the file 
+    * @param symptoms A list of symptoms to write to the file.
     */
-
 
    @Override
    public void writeSymptomDataToFile(List<String> symptoms) {
@@ -44,6 +42,8 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
    }
 
    /**
+    * This method is not implemented. Returns null.
+    * 
     * @return null
     */
    @Override
