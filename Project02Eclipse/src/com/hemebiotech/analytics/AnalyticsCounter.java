@@ -98,7 +98,7 @@ public class AnalyticsCounter {
 
 		// Read symptoms from a text file.
 		try (BufferedReader reader = new BufferedReader(new FileReader(
-				"/workspaces/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/src/com/hemebiotech/analytics/symptoms.txt"))) {
+				"C:/Users/AGOUROU GUSTAVE/Documents/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/src/com/hemebiotech/analytics/symptoms.txt"))) {
 			String line = reader.readLine();
 			while (line != null) {
 				symptomCounts.put(line, symptomCounts.getOrDefault(line, 0) + 1);
@@ -117,8 +117,8 @@ public class AnalyticsCounter {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-			// Display result
-			sortedSymptoms.forEach((key, value) -> System.out.println(key + ":" + value));
 		}
+		// Display result
+		sortedSymptoms.forEach((key, value) -> System.out.println(key + ":" + value));
 	}
 }

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry; // Imports the Map.Entry collection.
 
 /**
  * The main class to run the AnalyticsCounter application.
@@ -32,8 +31,8 @@ public class Main {
     Map<String, Integer> sortedSymptoms = analyticsCounter.sortSymptoms(symptomCounts);
 
     List<String> symptomsList = new ArrayList<>();
-    for (Entry<String, Integer> entry : sortedSymptoms.entrySet()) {
-      symptomsList.add(entry.getKey() + ":" + entry.getValue());
+    for (String symptom : sortedSymptoms.keySet()) {
+      symptomsList.add(symptom + ":" + sortedSymptoms.get(symptom));
     }
     writeSymptomDataFromFile.writeSymptomDataToFile(symptomsList);
   }
