@@ -117,8 +117,8 @@ public class AnalyticsCounter {
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
-			// Display result
-			sortedSymptoms.forEach((key, value) -> System.out.println(key + ":" + value));
 		}
+		// Display result
+		sortedSymptoms.forEach((key, value) -> System.out.println(key + ":" + value));
 	}
 }
