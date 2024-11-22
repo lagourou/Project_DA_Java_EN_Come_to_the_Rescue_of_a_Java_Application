@@ -36,9 +36,10 @@ public class AnalyticsCounter {
 	 * Retieves a list of symptom.
 	 * 
 	 * @return A list of symptoms.
+	 * @throws IOException If there is an I/O error while reading the file.
 	 */
 
-	public List<String> getSymptoms() {
+	public List<String> getSymptoms() throws IOException {
 		return reader.getSymptoms();
 	}
 
@@ -73,10 +74,11 @@ public class AnalyticsCounter {
 	/**
 	 * Writes symptom data in a file.
 	 * 
-	 * @param symptoms A map of symptom.
+	 * @param symptoms A map of symptom as keys and their counts as values.
+	 * @throws IOException If there is an I/O error while reading the file.
 	 */
 
-	public void writeSymptoms(Map<String, Integer> symptoms) {
+	public void writeSymptoms(Map<String, Integer> symptoms) throws IOException {
 
 		// Takes a map of symptoms and their occurrences converts to a strings.
 		List<String> dataToWrite = new ArrayList<>();
@@ -121,4 +123,5 @@ public class AnalyticsCounter {
 		// Display result
 		sortedSymptoms.forEach((key, value) -> System.out.println(key + ":" + value));
 	}
+
 }

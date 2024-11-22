@@ -28,11 +28,11 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 * Reads symptoms from a file.
 	 * 
 	 * @return The list of results.
-	 * @throws IOException If there is an I/O error.
+	 * @throws IOException If there is an I/O error while reading the file.
 	 */
 
 	@Override
-	public List<String> getSymptoms() {
+	public List<String> getSymptoms() throws IOException {
 		ArrayList<String> result = new ArrayList<String>();
 
 		if (filepath != null) {
@@ -43,8 +43,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 					result.add(line);
 					line = reader.readLine();
 				}
-			} catch (IOException e) {
-				e.printStackTrace();
 			}
 		}
 		return result;

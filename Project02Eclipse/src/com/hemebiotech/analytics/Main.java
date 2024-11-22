@@ -7,15 +7,35 @@ import java.util.Map;
 
 /**
  * The main class to run the AnalyticsCounter application.
+ * 
+ * This class is responsible for reading symptom data from a file, counting the
+ * occurrences
+ * of each symptom, sorting them alphabetically, and writing the results to an
+ * output file.
  */
 
 public class Main {
 
   /**
-   * Main method to run the application.
+   * Default constructor for the Main class.
+   * This constructor initializes the Main class but does not perform any actions.
+   * It is used to create an instance of the Main class.
+   * 
+   */
+
+  public Main() {
+    // Constructor is intentionally left empty.
+  }
+
+  /**
+   * Entry point of the application.
+   * 
+   * Initializes the components to read symptoms from a file, count their
+   * occurrences,
+   * sort them, and write the results to an output file.
    * 
    * @param args Command Line Arguments.
-   * @throws IOException if there is an I/O error.
+   * @throws IOException If there is an I/O error while reading the file.
    */
 
   public static void main(String[] args) throws IOException {
