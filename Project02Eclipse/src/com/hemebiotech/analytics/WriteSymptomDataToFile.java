@@ -5,9 +5,7 @@ import java.util.List;
 import java.io.IOException;
 
 /**
- * Simple brute force implementation.
- * Implements the ISymptomWriter interface.
- * 
+ * Simple brute force implementation of writing symptom data to a file.
  */
 
 public class WriteSymptomDataToFile implements ISymptomWriter {

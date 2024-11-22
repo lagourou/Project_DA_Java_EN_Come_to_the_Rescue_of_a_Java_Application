@@ -4,12 +4,8 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Anything that will read symptom data from a source
- * The important part is, the return value from the operation, which is a list
- * of strings,
- * that may contain many duplications.
- * 
- * The implementation does not need to order the list.
+ * Reads symptom data from a source and returns a list of strings, possibly with
+ * duplicates and unordered, or an empty list if no data is available.
  * 
  */
 public interface ISymptomReader {

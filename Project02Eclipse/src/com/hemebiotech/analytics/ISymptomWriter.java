@@ -4,9 +4,9 @@ import java.util.List;
 import java.io.IOException;
 
 /**
- * Interface for writing symptom data to a file.
- * 
- * This interface defines methods for writing and recovering symptom data.
+ * Writes symptom data to a file, with each symptom on a new line, accepts a
+ * list of strings representing the symptoms, and has a method to retrieve
+ * symptom data from the file, returning a list of strings.
  * 
  */
 
