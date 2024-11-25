@@ -35,7 +35,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
             writer.write(symptom + "\n");
          }
       } catch (IOException e) {
-         System.out.println("Une erreur s'est produite lors de l'opération de fichier : " + e.getMessage());
+         System.out.println("Error message : " + e.getMessage());
       }
    }
 

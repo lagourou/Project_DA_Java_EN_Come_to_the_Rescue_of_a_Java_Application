@@ -107,7 +107,7 @@ public class AnalyticsCounter {
 				line = reader.readLine(); // Get another symptom.
 			}
 		} catch (IOException e) {
-			System.out.println("Une erreur s'est produite lors de l'opération de fichier : " + e.getMessage());
+			System.out.println("Error message: " + e.getMessage());
 		}
 		AnalyticsCounter counter = new AnalyticsCounter(null, null);
 		Map<String, Integer> sortedSymptoms = counter.sortSymptoms(symptomCounts);
@@ -118,7 +118,7 @@ public class AnalyticsCounter {
 				writer.write(entry.getKey() + ":" + entry.getValue() + "\n");
 			}
 		} catch (IOException e) {
-			System.out.println("Une erreur s'est produite lors de l'opération de fichier : " + e.getMessage());
+			System.out.println("Error message: " + e.getMessage());
 		}
 		// Display result
 		sortedSymptoms.forEach((key, value) -> System.out.println(key + ":" + value));
