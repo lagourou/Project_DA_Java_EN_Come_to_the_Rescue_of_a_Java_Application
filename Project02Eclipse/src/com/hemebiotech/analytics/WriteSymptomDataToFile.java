@@ -15,7 +15,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
    /**
     * Constructs a WriteSymptomDataToFile object.
     *
-    * @param filepath Store the path to the file containing symptom data.
+    * @param filepath the path to the file where symptom data will be written.
     */
 
    public WriteSymptomDataToFile(String filepath) {
