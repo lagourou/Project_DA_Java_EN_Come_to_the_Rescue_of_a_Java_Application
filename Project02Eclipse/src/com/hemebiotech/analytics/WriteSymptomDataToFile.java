@@ -6,8 +6,6 @@ import java.util.List;
 
 /**
  * Simple brute force implementation of writing symptom data to a file.
- * 
- *  @param filepath Store the path to the file containing symptom data.
  */
 
 public class WriteSymptomDataToFile implements ISymptomWriter {
@@ -16,6 +14,8 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
 
    /**
     * Constructs a WriteSymptomDataToFile object.
+    *
+    * @param filepath the path to the file where symptom data will be written.
     */
 
    public WriteSymptomDataToFile(String filepath) {

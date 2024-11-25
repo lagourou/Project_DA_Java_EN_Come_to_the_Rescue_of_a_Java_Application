@@ -8,8 +8,6 @@ import java.util.List;
 
 /**
  * Simple brute force implementation of reading symptom data from a file.
- * 
- * @param filepath Store the path to the file containing symptom data.
  */
 
 public class ReadSymptomDataFromFile implements ISymptomReader {
@@ -18,6 +16,8 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	/**
 	 * Constructs a ReadSymptomDataFromFile object.
+	 * 
+	 * @param filepath Store the path to the file containing symptom data.
 	 */
 
 	public ReadSymptomDataFromFile(String filepath) {
