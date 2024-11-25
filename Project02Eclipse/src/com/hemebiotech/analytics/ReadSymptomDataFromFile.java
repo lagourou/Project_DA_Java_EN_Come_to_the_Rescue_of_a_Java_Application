@@ -8,15 +8,15 @@ import java.util.List;
 
 /**
  * Simple brute force implementation of reading symptom data from a file.
+ * 
+ * @param filepath Store the path to the file containing symptom data.
  */
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
-	private String filepath;
+	private final String filepath;
 
 	/**
 	 * Constructs a ReadSymptomDataFromFile object.
-	 * 
-	 * @param filepath A path to file with symptom strings in it one per line.
 	 */
 
 	public ReadSymptomDataFromFile(String filepath) {
@@ -32,7 +32,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	@Override
 	public List<String> getSymptoms() throws IOException {
-		ArrayList<String> result = new ArrayList<String>();
+		ArrayList<String> result = new ArrayList<>();
 
 		if (filepath != null) {
 			try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {

@@ -1,14 +1,14 @@
 package com.hemebiotech.analytics;
 
-import java.util.List; // Imports the List collection 
-import java.util.ArrayList; // Imports the ArrayList collection ArrayList
-import java.util.Map; // Imports the Map collection 
-import java.util.TreeMap; // Imports the TreeMap collection 
-import java.util.HashMap; // Imports the HashMap collection 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException; // Imports the class for managing input/output exceptions
+import java.io.BufferedReader; // Imports the List collection
+import java.io.FileReader; // Imports the ArrayList collection ArrayList
+import java.io.FileWriter; // Imports the Map collection
+import java.io.IOException; // Imports the TreeMap collection
+import java.util.ArrayList; // Imports the HashMap collection
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap; // Imports the class for managing input/output exceptions
 
 /**
  * The AnalyticsCounter class analyses symptom data.
@@ -33,7 +33,7 @@ public class AnalyticsCounter {
 	}
 
 	/**
-	 * Retieves a list of symptom.
+	 * Retrieves a list of symptom.
 	 * 
 	 * @return A list of symptoms.
 	 * @throws IOException If there is an I/O error while reading the file.
@@ -107,7 +107,6 @@ public class AnalyticsCounter {
 				line = reader.readLine(); // Get another symptom.
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		AnalyticsCounter counter = new AnalyticsCounter(null, null);
 		Map<String, Integer> sortedSymptoms = counter.sortSymptoms(symptomCounts);
@@ -118,7 +117,6 @@ public class AnalyticsCounter {
 				writer.write(entry.getKey() + ":" + entry.getValue() + "\n");
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 		// Display result
 		sortedSymptoms.forEach((key, value) -> System.out.println(key + ":" + value));

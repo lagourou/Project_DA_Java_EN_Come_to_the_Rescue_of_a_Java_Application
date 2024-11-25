@@ -1,21 +1,21 @@
 package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
-import java.util.List;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Simple brute force implementation of writing symptom data to a file.
+ * 
+ *  @param filepath Store the path to the file containing symptom data.
  */
 
 public class WriteSymptomDataToFile implements ISymptomWriter {
 
-   private String filepath;
+   private final  String filepath;
 
    /**
     * Constructs a WriteSymptomDataToFile object.
-    * 
-    * @param filepath A path to file with symptom strings in it one per line.
     */
 
    public WriteSymptomDataToFile(String filepath) {
@@ -35,7 +35,6 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
             writer.write(symptom + "\n");
          }
       } catch (IOException e) {
-         e.printStackTrace();
       }
    }
 
