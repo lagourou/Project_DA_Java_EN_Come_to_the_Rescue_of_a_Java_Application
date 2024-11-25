@@ -1,7 +1,7 @@
 package com.hemebiotech.analytics;
 
-import java.util.List;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Writes symptom data to a file, with each symptom on a new line, accepts a

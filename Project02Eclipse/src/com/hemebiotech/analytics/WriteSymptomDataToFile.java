@@ -1,8 +1,8 @@
 package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
-import java.util.List;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Simple brute force implementation of writing symptom data to a file.
@@ -36,7 +36,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
             writer.write(symptom + "\n");
          }
       } catch (IOException e) {
-         System.out.println("Une erreur s'est produite lors de l'opération de fichier : " + e.getMessage());
+         System.out.println("Error message : " + e.getMessage());
          }
    }
 
