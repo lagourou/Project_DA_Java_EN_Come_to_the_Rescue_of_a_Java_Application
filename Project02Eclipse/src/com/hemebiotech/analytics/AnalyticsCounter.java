@@ -1,14 +1,14 @@
 package com.hemebiotech.analytics;
 
-import java.io.BufferedReader; // Imports the List collection
-import java.io.FileReader; // Imports the ArrayList collection ArrayList
-import java.io.FileWriter; // Imports the Map collection
-import java.io.IOException; // Imports the TreeMap collection
-import java.util.ArrayList; // Imports the HashMap collection
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeMap; // Imports the class for managing input/output exceptions
+import java.io.BufferedReader; 
+import java.io.FileReader; 
+import java.io.FileWriter; 
+import java.io.IOException; // Imports the class IOException for managing input/output exceptions 
+import java.util.ArrayList; // Imports the ArrayList class
+import java.util.HashMap; // Imports the HashMap class
+import java.util.List; // Imports the List interface
+import java.util.Map; // Imports the Map interface
+import java.util.TreeMap; // Imports the TreeMap class
 
 /**
  * The AnalyticsCounter class analyses symptom data.
